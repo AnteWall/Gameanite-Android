@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gameanite</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="ChooseGameTitle">Choose a active Game</string>
+    <string name="GameListItemText">Large Text</string>
+    <string name="ConnectToTitle">Connect to server:</string>
+    <string name="DefaultServer">http://10.0.2.2:3000/</string>
+    <string name="ConnectToBtn">Connect To Server</string>
+    <string name="ActiveGamesTitle">Active Games</string>
+
+</resources>
