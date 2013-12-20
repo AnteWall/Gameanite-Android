@@ -59,7 +59,7 @@ public class ConnectToFragment extends Fragment implements View.OnClickListener{
                     url = new URL(connectInput.getText().toString());
 
                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                    GameFragment fragment = new GameFragment(url);
+                    GameFragment fragment = new GameFragment(url,getActivity());
                     fragmentTransaction.add(R.id.container,fragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();

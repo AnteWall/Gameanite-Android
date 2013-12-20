@@ -8,7 +8,13 @@
     <string name="GameListItemText">Large Text</string>
     <string name="ConnectToTitle">Connect to server:</string>
     <string name="DefaultServer">http://10.0.2.2:3000/</string>
+    <string name="DefaultServer2">http://gameanite.herokuapp.com/</string>
     <string name="ConnectToBtn">Connect To Server</string>
     <string name="ActiveGamesTitle">Active Games</string>
+    <string name="CreateUserPositive">Create User</string>
+    <string name="Canel">Canel</string>
+    <string name="ClientNameHiny">Name</string>
+    <string name="ClientColorHint">color</string>
+    <string name="RollDiceBtn">Roll Dice</string>
 
 </resources>

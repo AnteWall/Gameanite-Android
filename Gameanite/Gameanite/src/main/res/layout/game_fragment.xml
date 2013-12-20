@@ -19,4 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ActiveGamesList" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/RollDiceBtn"
+        android:id="@+id/RollDiceBtn"
+        android:visibility="invisible" />
 </LinearLayout>

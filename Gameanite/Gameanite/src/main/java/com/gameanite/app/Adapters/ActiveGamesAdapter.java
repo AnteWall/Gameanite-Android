@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.gameanite.app.Containers.GameRoomInfo;
 import com.gameanite.app.R;
 
 import java.util.ArrayList;
@@ -19,18 +20,18 @@ import java.util.ArrayList;
 public class ActiveGamesAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater;
-    private ArrayList<String> games = new ArrayList<String>();
+    private ArrayList<GameRoomInfo> games = new ArrayList<GameRoomInfo>();
     private Context context;
 
     public ActiveGamesAdapter(Context context) {
         this.context = context;
-        mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mInflater = (LayoutInflater)context.getSystemService(this.context.LAYOUT_INFLATER_SERVICE);
 
     }
 
-    public ActiveGamesAdapter(Context context, ArrayList<String> games) {
+    public ActiveGamesAdapter(Context context, ArrayList<GameRoomInfo> games) {
         this.context = context;
-        mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mInflater = (LayoutInflater)context.getSystemService(this.context.LAYOUT_INFLATER_SERVICE);
         if(games.size() == 0){
             AddItem("No games available");
         }else{
@@ -40,7 +41,7 @@ public class ActiveGamesAdapter extends BaseAdapter {
 
     public void AddItem(String name){
         System.out.println("ADDING: " + name);
-        games.add(name);
+        games.add(new GameRoomInfo(name));
     }
 
     @Override
@@ -49,7 +50,7 @@ public class ActiveGamesAdapter extends BaseAdapter {
     }
 
     @Override
-    public String getItem(int position) {
+    public GameRoomInfo getItem(int position) {
         return games.get(position);
     }
 
@@ -60,7 +61,7 @@ public class ActiveGamesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder = null;
+        ViewHolder holder;
         if(convertView == null){
             holder = new ViewHolder();
             convertView = mInflater.inflate(R.layout.game_list_item,null);
@@ -69,11 +70,11 @@ public class ActiveGamesAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder)convertView.getTag();
         }
-        holder.textView.setText(games.get(position));
+        holder.textView.setText(games.get(position).getRoomName());
         return convertView;
     }
 
-    public void AddNewList(ArrayList<String> games) {
+    public void AddNewList(ArrayList<GameRoomInfo> games) {
         this.games = games;
         notifyDataSetChanged();
     }
